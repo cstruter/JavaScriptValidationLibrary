@@ -1,0 +1,4 @@
+﻿.red-tooltip + .tooltip > .tooltip-inner {background-color: #f00;}
+.red-tooltip + .tooltip > .tooltip-arrow {border-right-color: #f00;}
+.silver-tooltip + .tooltip > .tooltip-inner {background-color: #ccc; color: #000; }
+.silver-tooltip + .tooltip > .tooltip-arrow {border-right-color: #ccc;}
