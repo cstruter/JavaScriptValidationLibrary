@@ -46,7 +46,7 @@ $.Validation.OnAsyncStart.add(function (sender, args) {
     }
 
     sender.tooltip('destroy');
-    sender.tooltip({ title: '<img src="Images/ajax-loader-small.gif" /> ' + message, placement: 'right', trigger: 'manual', html: true });
+    sender.tooltip({ title: '<img src="../Images/ajax-loader-small.gif" /> ' + message, placement: 'right', trigger: 'manual', html: true });
     sender.tooltip().removeClass('red-tooltip');
     sender.tooltip().addClass('silver-tooltip');
     sender.tooltip('show');
