@@ -14,7 +14,7 @@ public class Test : IHttpHandler
         context.Response.ContentType = "application/json; charset=utf-8";
         if (context.Request.QueryString["value"].ToLower() == "christoff@cstruter.com")
         {
-            context.Response.Write(json.Serialize(new { isValid = false, message = "User already exists" }));
+            context.Response.Write(json.Serialize(new { isValid = false, message = "User already exists" })); // simulate existing user
         }
         else
         {
