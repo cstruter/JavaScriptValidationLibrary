@@ -8,12 +8,11 @@
         rel="Stylesheet" />
     <link href="Styles/Bootstrap.Custom.css" rel="stylesheet" type="text/css" />
     <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
-    <script type="text/javascript" src="http://netdna.bootstrapcdn.com/bootstrap/3.0.0/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="http://netdna.bootstrapcdn.com/bootstrap/3.0.0/js/bootstrap.min.js"></script>   
     <script type="text/javascript" src="Scripts/Validation.js"></script>
-    <script type="text/javascript" src="Scripts/Validation.Validators.js"></script>
     <script type="text/javascript" src="Scripts/Validation.Display.Bootstrap.js"></script>
     <script type="text/javascript">
-        Validation.Group('add', function (group) {
+        $.Validation.Group('add', function (group) {
             group.CausesValidation.Add('#btnSubmit');
             group.Validator('.box1').IsChecked({ exact: 2, message: 'Tick only two of these boxes' });
             group.Validator('.box2').IsChecked({ min: 1, message: 'Tick at least one of these boxes' });

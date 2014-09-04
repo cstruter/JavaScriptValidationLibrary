@@ -10,21 +10,20 @@
     <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
     <script type="text/javascript" src="http://netdna.bootstrapcdn.com/bootstrap/3.0.0/js/bootstrap.min.js"></script>
     <script type="text/javascript" src="Scripts/Validation.js"></script>
-    <script type="text/javascript" src="Scripts/Validation.Validators.js"></script>
     <script type="text/javascript" src="Scripts/Validation.Display.Bootstrap.js"></script>
     <script type="text/javascript">
-        Validation.Group('add', function (group) {
-            group.OnBeforeValidation = function () {
-                Validation.Group('edit').Clear();
-            };
+        $.Validation.Group('add', function (group) {
+            group.OnBeforeValidation.add(function () {
+                $.Validation.Group('edit').Clear();
+            });
             group.CausesValidation.Add('#btnAdd');
             group.Validator('#txtDescription').IsRequired();
             group.Validator('#txtNote').IsRequired();
         });
-        Validation.Group('edit', function (group) {
-            group.OnBeforeValidation = function () {
-                Validation.Group('add').Clear();
-            };
+        $.Validation.Group('edit', function (group) {
+            group.OnBeforeValidation.add(function () {
+                $.Validation.Group('add').Clear();
+            });
             group.CausesValidation.Add('#btnEdit');
             group.Validator('#txtDescription').IsRequired();
         });

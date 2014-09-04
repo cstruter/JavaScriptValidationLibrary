@@ -10,13 +10,12 @@
     <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
     <script type="text/javascript" src="http://netdna.bootstrapcdn.com/bootstrap/3.0.0/js/bootstrap.min.js"></script>
     <script type="text/javascript" src="Scripts/Validation.js"></script>
-    <script type="text/javascript" src="Scripts/Validation.Validators.js"></script>
     <script type="text/javascript" src="Scripts/Validation.Display.Bootstrap.js"></script>
     <script type="text/javascript">
-        Validation.Dependency('IsFemale', function () {
+        $.Validation.Dependency('IsFemale', function () {
             return ($('#ddlGender').val() == 2);
         });
-        Validation.Group('dependency', function (group) {
+        $.Validation.Group('dependency', function (group) {
             group.CausesValidation.Add('#btnSubmit');
             group.Validator('#ddlGender').IsRequired();
             group.Validator('#txtFirstName').IsRequired();

@@ -3,13 +3,14 @@
     Author: Christoff Truter
 
     Date Created: 2013/10/08
+    Date Modified: 2014/09/04
 
     e-Mail: christoff@cstruter.com
     Website: www.cstruter.com
-    Copyright 2013 CSTruter	
+    Copyright 2013, 2014 CSTruter	
 */
 
-Validation.OnInValid = function (sender, args) {
+$.Validation.OnInValid.add(function (sender, args) {
     var message = '*';
     if (typeof args !== 'undefined') {
         if (typeof args.message !== 'undefined') {
@@ -26,13 +27,13 @@ Validation.OnInValid = function (sender, args) {
     sender.tooltip().removeClass('silver-tooltip');
     sender.tooltip().addClass('red-tooltip');
     sender.tooltip('show');
-}
+});
 
-Validation.OnValid = function (sender, args) {
+$.Validation.OnValid.add(function (sender, args) {
     sender.tooltip('hide');
-}
+});
 
-Validation.OnAsyncStart = function (sender, args) {
+$.Validation.OnAsyncStart.add(function (sender, args) {
     var message = '';
     if (typeof args !== 'undefined') {
         if (typeof args.message !== 'undefined') {
@@ -49,12 +50,12 @@ Validation.OnAsyncStart = function (sender, args) {
     sender.tooltip().removeClass('red-tooltip');
     sender.tooltip().addClass('silver-tooltip');
     sender.tooltip('show');
-}
+});
 
-Validation.OnAsyncEnd = function (sender, args) {
+$.Validation.OnAsyncEnd.add(function (sender, args) {
     sender.tooltip('hide');
-}
+});
 
-Validation.Clear = function (sender) {
-    Validation.OnValid(sender);
-}
+$.Validation.OnClear.add(function (sender) {
+    $.Validation.OnValid.fire(sender);
+});

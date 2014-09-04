@@ -3,13 +3,14 @@
     Author: Christoff Truter
 
     Date Created: 2013/10/08
+    Date Modified: 2014/09/04
 
     e-Mail: christoff@cstruter.com
     Website: www.cstruter.com
-    Copyright 2013 CSTruter	
+    Copyright 2013, 2014 CSTruter	
 */
 
-Validation.OnInValid = function (sender, args) {
+$.Validation.OnInValid.add(function (sender, args) {
     var message = '*';
     if (typeof args !== 'undefined') {
         if (typeof args.message !== 'undefined') {
@@ -30,17 +31,17 @@ Validation.OnInValid = function (sender, args) {
         }
     }
     errorMessage.html(message);
-}
+});
 
-Validation.OnValid = function (sender, args) {
+$.Validation.OnValid.add(function (sender, args) {
     var errorId = (sender.prop('id') || sender.prop('class')) + '_errorMessage';
     var errorMessage = $('#' + errorId);
     if (errorMessage.length == 1) {
         errorMessage.html('');
     }
-}
+});
 
-Validation.OnAsyncStart = function (sender, args) {
+$.Validation.OnAsyncStart.add(function (sender, args) {
     var message = '';
     if (typeof args !== 'undefined') {
         if (typeof args.message !== 'undefined') {
@@ -60,16 +61,16 @@ Validation.OnAsyncStart = function (sender, args) {
         }
     }
     asyncMessage.html('<img src="Images/ajax-loader-small.gif" /> ' + message);
-}
+});
 
-Validation.OnAsyncEnd = function (sender, args) {
+$.Validation.OnAsyncEnd.add(function (sender, args) {
     var asyncId = (sender.prop('id') || sender.prop('class')) + '_asyncmessage';
     var asyncMessage = $('#' + asyncId);
     if (asyncMessage.length == 1) {
         asyncMessage.html('');
     }
-}
+});
 
-Validation.Clear = function (sender) {
-    Validation.OnValid(sender);
-}
+$.Validation.OnClear.add(function (sender) {
+    $.Validation.OnValid.fire(sender);
+});
