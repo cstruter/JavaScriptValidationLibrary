@@ -1,25 +1,71 @@
-﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml">
+﻿<!DOCTYPE html>
+<html lang="en">
 <head>
     <title></title>
     <link href="http://netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap.min.css"
         rel="Stylesheet" />
+    <link href="Styles/Bootstrap.Custom.css" rel="stylesheet" type="text/css" />
     <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
     <script type="text/javascript" src="http://netdna.bootstrapcdn.com/bootstrap/3.0.0/js/bootstrap.min.js"></script>
 </head>
 <body>
     <form id="form1">
-    <div>
-        <a href="Examples/Simple.html">Simple Validation</a>
-        <br />
-        <a href="Examples/Groups.html">Multiple Groups Validation</a>
-        <br />
-        <a href="Examples/Dependency.html">Dependency Validation</a>
-        <br />
-        <a href="Examples/Chain.html">Chain Validation</a>
-        <br />
-        <a href="Examples/Async.html">Async Validation</a>
-        <br />
+    <div class="navbar navbar-default navbar-fixed-top" role="navigation">
+        <div class="container">
+            <div class="navbar-header">
+                <a class="navbar-brand" href="#">JavaScript Validation</a>
+            </div>
+        </div>
+    </div>
+    <div class="container">
+        <div class="jumbotron">
+            <h3>
+                Simple Validation</h3>
+            <p>
+                The basics of how to use this plugin.</p>
+            <p>
+                <a href="Examples/Simple.html" class="btn btn-primary btn-lg" role="button">Learn more</a></p>
+        </div>
+        <div class="jumbotron">
+            <h3>
+                Multiple Groups Validation</h3>
+            <p>
+                Group validators together and validate them separately.</p>
+            <p>
+                <a href="Examples/Groups.html" class="btn btn-primary btn-lg" role="button">Learn more</a></p>
+        </div>
+        <div class="jumbotron">
+            <h3>
+                Dependency Validation</h3>
+            <p>
+                Evaluate a validator only when a certain condition <i>(defined via custom predicate)</i> is met.</p>
+            <p>
+                <a href="Examples/Dependency.html" class="btn btn-primary btn-lg" role="button">Learn more</a></p>
+        </div>
+        <div class="jumbotron">
+            <h3>
+                Chain Validation</h3>
+            <p>
+                Validate an array of controls together e.g. checkboxes.</p>
+            <p>
+                <a href="Examples/Chain.html" class="btn btn-primary btn-lg" role="button">Learn more</a></p>
+        </div>
+        <div class="jumbotron">
+            <h3>
+                Async Validation</h3>
+            <p>
+                Perform an asynchronous validation operation, typically an ajax operation.</p>
+            <p>
+                <a href="Examples/Async.html" class="btn btn-primary btn-lg" role="button">Learn more</a></p>
+        </div>
+        <div class="jumbotron">
+            <h3>
+                Custom Validation</h3>
+            <p>
+                How to add your own validators.</p>
+            <p>
+                <a href="Examples/Custom.html" class="btn btn-primary btn-lg" role="button">Learn more</a></p>
+        </div>
     </div>
     </form>
 </body>

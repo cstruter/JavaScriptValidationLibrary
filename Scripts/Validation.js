@@ -30,10 +30,6 @@
                 };
             } (property);
         },
-        Dependencies: {},
-        Dependency: function (name, predicate) {
-            this.Dependencies[name] = predicate;
-        },
         Group: function (name, callback) {
             if (typeof callback === 'undefined') {
                 return this.Groups[name];
@@ -188,7 +184,7 @@
                 for (var name in validators[id]) {
                     var sender = $(id);
                     var args = validators[id][name];
-                    if ((typeof args.dependency !== 'undefined') && (!$.Validation.Dependencies[args.dependency]())) {
+                    if ((typeof args.dependency === 'function') && (!args.dependency())) {
                         $.Validation.OnClear.fire(sender);
                         continue;
                     }

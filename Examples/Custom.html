@@ -10,41 +10,34 @@
     <script type="text/javascript" src="../Scripts/Validation.js"></script>
     <script type="text/javascript" src="../Scripts/Validation.Display.Bootstrap.js"></script>
     <script type="text/javascript">
-        $.Validation.Group('add', function (group) {
+        $.Validation.Add('IsBetweenOneAndTen', function (sender) {
+            var value = sender.val();
+            return((value > 0) && (value <= 10));
+        });
+        $.Validation.Group('simple', function (group) {
             group.CausesValidation.Add('#btnSubmit');
-            group.Validator('.box1').IsChecked({ exact: 2, message: 'Tick only two of these boxes' });
-            group.Validator('.box2').IsChecked({ min: 1, message: 'Tick at least one of these boxes' });
-            group.Validator('.box3').IsChecked({ max: 2, message: 'Tick a maximum of two of these boxes' });
+            group.Validator('#txtNumber').IsRequired();
+            group.Validator('#txtNumber').IsNumber({ message: 'Numeric value required' });
+            group.Validator('#txtNumber').IsBetweenOneAndTen({message: 'Please enter a value between 1 and 10'});
         });
     </script>
 </head>
 <body>
-    <form id="form1">
     <div class="navbar navbar-default navbar-fixed-top" role="navigation">
         <div class="container">
             <div class="navbar-header">
-                <a class="navbar-brand" href="#">JavaScript Validation > Chain Validation</a>
+                <a class="navbar-brand" href="#">JavaScript Validation > Custom Validation</a>
             </div>
         </div>
     </div>
     <div class="container">
         <div class="form-group">
-            <input type="checkbox" class="box1" />
-            <input type="checkbox" class="box1" />
-            <input type="checkbox" class="box1" />
-            <br />
-            <input type="checkbox" class="box2" />
-            <input type="checkbox" class="box2" />
-            <input type="checkbox" class="box2" />
-            <br />
-            <input type="checkbox" class="box3" />
-            <input type="checkbox" class="box3" />
-            <input type="checkbox" class="box3" />
-            <br />
+            <label for="txtNumber">
+                Number between 1 and 10</label>
+            <input type="text" class="form-control" style="width: 200px" id="txtNumber" />
         </div>
         <button type="submit" id="btnSubmit" class="btn btn-default">
             Submit</button>
     </div>
-    </form>
 </body>
 </html>
